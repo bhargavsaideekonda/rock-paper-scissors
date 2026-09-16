@@ -5,7 +5,11 @@ you = 0
 me = 0
 for each_round in range(5):
     print(f"Round {each_round + 1} of 5")
-    user = input("Your choice (rock/paper/scissors): ")
+    try:
+        user = input("Your choice (rock/paper/scissors): ")
+    except ValueError:
+        print("Please enter a valid choice.")
+        continue
     computer_choice=random.choice(list_a)
     print(f"You chose {user}, I chose {computer_choice}.")
     if user == computer_choice:
